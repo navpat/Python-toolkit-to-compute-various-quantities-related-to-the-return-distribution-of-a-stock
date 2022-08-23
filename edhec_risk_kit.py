@@ -58,11 +58,6 @@ def var_gaussian(r,level=5):
     z=norm.ppf(level/100)
     return -(r.mean()+z*r.std(ddof=0))
 
-def get_ind_returns():
-    ind=pd.read_csv("ind30_m_vw_rets.csv",header=0,index_col=0,parse_dates=True)/100
-    ind.index=pd.to_datetime(ind.index,format="%Y%m").to_period('M')
-    ind.columns=ind.columns.str.strip()
-    return ind
     
 
     
